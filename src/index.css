@@ -516,3 +516,202 @@ body {
     gap: 5px;
   }
 }
+
+/* ========================================
+   ENHANCED MOBILE RESPONSIVE DESIGN
+   ======================================== */
+
+/* Small mobile devices (320px - 480px) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .app {
+    padding: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .header p {
+    font-size: 0.95rem;
+  }
+
+  .balance-amount {
+    font-size: 2rem;
+  }
+
+  .balance-currency {
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .wallet-card {
+    padding: 20px;
+  }
+
+  .wallet-icon {
+    font-size: 2.5rem;
+  }
+
+  .form-group input {
+    font-size: 0.95rem;
+  }
+
+  .event-list {
+    max-height: 200px;
+    font-size: 0.85rem;
+  }
+
+  .contract-counter {
+    padding: 15px;
+  }
+
+  .counter-value {
+    font-size: 2.5rem;
+  }
+}
+
+/* Tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .app {
+    padding: 30px;
+  }
+
+  .header h1 {
+    font-size: 2.2rem;
+  }
+
+  .wallet-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .balance-amount {
+    font-size: 2.5rem;
+  }
+}
+
+/* Landscape orientation optimizations */
+@media (max-height: 600px) and (orientation: landscape) {
+  .app {
+    padding: 15px;
+  }
+
+  .balance-card {
+    padding: 20px;
+  }
+
+  .contract-section,
+  .transaction-section {
+    padding: 20px;
+  }
+
+  .event-log {
+    padding: 15px;
+  }
+
+  .event-list {
+    max-height: 150px;
+  }
+}
+
+/* Large screens (1200px+) */
+@media (min-width: 1200px) {
+  .app {
+    max-width: 1400px;
+  }
+
+  .wallet-options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .wallet-card {
+    min-height: 150px;
+  }
+
+  input,
+  button {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Print styles */
+@media print {
+  .btn,
+  .wallet-connection,
+  .event-log {
+    display: none;
+  }
+
+  .app {
+    background: white;
+    box-shadow: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn {
+    border: 2px solid currentColor;
+  }
+
+  .wallet-card {
+    border-width: 3px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  }
+
+  .app {
+    background: #1e1e1e;
+    color: #e0e0e0;
+  }
+
+  .connected-info,
+  .transaction-section,
+  .contract-section {
+    background: #2a2a2a;
+  }
+
+  .form-group input {
+    background: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #444;
+  }
+
+  .wallet-card {
+    background: #2a2a2a;
+    border-color: #444;
+  }
+
+  .wallet-card:hover {
+    background: #333;
+  }
+}
