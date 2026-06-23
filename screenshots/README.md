@@ -1,25 +1,96 @@
-# Screenshots
+# 📸 Screenshots Directory
 
-This folder contains screenshots required for the project submission.
+This folder contains all required screenshots for the Advanced Level 2.3 submission.
 
-## Required Screenshots:
+## ✅ Required Screenshots (MUST HAVE)
 
-1. **wallet-connected.png** - Shows the wallet connected state with public key displayed
-2. **balance-display.png** - Shows the XLM balance clearly displayed in the UI
-3. **transaction-success.png** - Shows a successful testnet transaction
-4. **transaction-result.png** - Shows the transaction result displayed to the user
+### 1. Mobile Responsive UI (3 views)
+- **desktop-view.png** - Full desktop view of the application
+- **tablet-view.png** - Tablet view (768px width, use DevTools device mode)
+- **mobile-view.png** - Mobile view (375px width, iPhone 12 Pro or similar)
 
-## How to Take Screenshots:
+### 2. CI/CD Pipeline
+- **cicd-pipeline.png** - GitHub Actions workflow showing all tests passing with green checkmarks
 
-Please refer to the `SUBMISSION_GUIDE.md` file in the root directory for detailed instructions on how to capture these screenshots.
+### 3. Test Results
+- **test-results.png** - Terminal output showing "32 passed" tests
 
-### Quick Tips:
-- Run the application with `npm run dev`
-- Make sure Freighter wallet is installed and connected to Testnet
-- Ensure your testnet account is funded
-- Take clear, full-window screenshots showing the relevant features
-- Save screenshots as PNG files with the exact names listed above
+## 🌟 Bonus Screenshots (Recommended)
 
-## Placeholder
+- **wallet-selection.png** - Multi-wallet selection interface (Freighter + xBull)
+- **wallet-connected.png** - Connected state with public key and balance displayed
+- **contract-interaction.png** - Smart contract interface with counter
+- **transaction-success.png** - Successful transaction with hash and explorer link
+- **event-log.png** - Real-time event log showing multiple events
 
-Until you add your screenshots, this folder serves as a placeholder. The README.md in the root directory already references these images, so they will display once you add them.
+---
+
+## 📋 How to Take Screenshots
+
+**See detailed guide**: `📸_SCREENSHOT_GUIDE.md` in root directory
+
+### Quick Steps:
+
+#### Desktop/Tablet/Mobile Views:
+1. Open https://stellar-wallet-checker.vercel.app/
+2. For desktop: Take full window screenshot (Win + Shift + S)
+3. For mobile/tablet: Press F12 → Ctrl+Shift+M → Select device → Capture screenshot
+
+#### CI/CD Pipeline:
+1. Go to https://github.com/frankosakwe/stellar-wallet-checker/actions
+2. Click on latest successful workflow run
+3. Screenshot the green passing pipeline
+
+#### Test Results:
+1. Open terminal in project directory
+2. Run: `npm test`
+3. Screenshot when output shows "32 passed (32)"
+
+---
+
+## 📏 Screenshot Specifications
+
+- **Format**: PNG (preferred) or JPG
+- **Resolution**: Minimum 1280x720 (HD quality)
+- **File Size**: Keep under 2MB each for faster loading
+- **Quality**: Clear, readable text and UI elements
+- **Content**: Show complete interface, no cropped elements
+
+---
+
+## 🚀 Adding Your Screenshots
+
+1. **Take all screenshots** following the guide
+2. **Save to this folder** with exact filenames listed above
+3. **Commit to git**:
+   ```bash
+   git add screenshots/
+   git commit -m "docs: Add required screenshots for advanced submission"
+   git push
+   ```
+4. Screenshots will automatically display in README_V2.md!
+
+---
+
+## ✅ Verification Checklist
+
+Before submitting, verify you have:
+- [ ] desktop-view.png
+- [ ] tablet-view.png  
+- [ ] mobile-view.png
+- [ ] cicd-pipeline.png
+- [ ] test-results.png
+- [ ] All files under 2MB
+- [ ] All files pushed to GitHub
+
+---
+
+## 📍 Current Status
+
+**Live App**: https://stellar-wallet-checker.vercel.app/  
+**CI/CD**: https://github.com/frankosakwe/stellar-wallet-checker/actions  
+**Repository**: https://github.com/frankosakwe/stellar-wallet-checker
+
+---
+
+**Once you add screenshots, your submission will be 100% complete!** 🎉
