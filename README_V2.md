@@ -60,7 +60,21 @@ CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW
 
 ---
 
-## 🎯 Key Features
+## 🌐 Live Demo
+
+**🚀 Try it now**: https://stellar-wallet-checker.vercel.app/
+
+The application is fully functional on Stellar Testnet. Connect your Freighter wallet and interact with the deployed smart contract!
+
+**Features you can test**:
+- Multi-wallet connection (Freighter + xBull UI)
+- Real-time XLM balance display
+- Smart contract interaction (Counter increment)
+- Transaction submission to testnet
+- Real-time event tracking
+- Mobile responsive design
+
+---
 
 ### 1. Multi-Wallet Support
 - **Freighter Wallet** ✅ Fully implemented
@@ -290,8 +304,9 @@ The application handles the following error types:
 ## 🔗 Important Links
 
 ### Application
+- **Live Demo**: https://stellar-wallet-checker.vercel.app/
 - **Repository**: https://github.com/frankosakwe/stellar-wallet-checker
-- **Live Demo**: [Deploy and add link here]
+- **CI/CD Pipeline**: https://github.com/frankosakwe/stellar-wallet-checker/actions
 
 ### Contract
 - **Contract Address**: `CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW`
