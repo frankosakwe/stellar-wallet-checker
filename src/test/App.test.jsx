@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest'
-import { render, screen, waitFor } from '@testing-library/react'
+import { render, screen, waitFor, act } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import App from '../App'
 import * as freighterApi from '@stellar/freighter-api'
@@ -32,7 +32,10 @@ describe('App Component', () => {
     render(<App />)
     
     const connectButton = screen.getByRole('button', { name: /Connect Wallet/i })
-    await user.click(connectButton)
+    
+    await act(async () => {
+      await user.click(connectButton)
+    })
     
     await waitFor(() => {
       expect(screen.getByText(/Select Your Wallet/i)).toBeInTheDocument()
@@ -44,7 +47,10 @@ describe('App Component', () => {
     render(<App />)
     
     const connectButton = screen.getByRole('button', { name: /Connect Wallet/i })
-    await user.click(connectButton)
+    
+    await act(async () => {
+      await user.click(connectButton)
+    })
     
     await waitFor(() => {
       expect(screen.getByText(/Freighter/i)).toBeInTheDocument()
@@ -56,7 +62,10 @@ describe('App Component', () => {
     render(<App />)
     
     const connectButton = screen.getByRole('button', { name: /Connect Wallet/i })
-    await user.click(connectButton)
+    
+    await act(async () => {
+      await user.click(connectButton)
+    })
     
     await waitFor(() => {
       expect(screen.getByText(/xBull Wallet/i)).toBeInTheDocument()
@@ -68,7 +77,10 @@ describe('App Component', () => {
     render(<App />)
     
     const connectButton = screen.getByRole('button', { name: /Connect Wallet/i })
-    await user.click(connectButton)
+    
+    await act(async () => {
+      await user.click(connectButton)
+    })
     
     await waitFor(() => {
       const backButton = screen.getByRole('button', { name: /Back/i })
@@ -81,14 +93,20 @@ describe('App Component', () => {
     render(<App />)
     
     const connectButton = screen.getByRole('button', { name: /Connect Wallet/i })
-    await user.click(connectButton)
+    
+    await act(async () => {
+      await user.click(connectButton)
+    })
     
     await waitFor(() => {
       expect(screen.getByText(/Select Your Wallet/i)).toBeInTheDocument()
     })
     
     const backButton = screen.getByRole('button', { name: /Back/i })
-    await user.click(backButton)
+    
+    await act(async () => {
+      await user.click(backButton)
+    })
     
     await waitFor(() => {
       expect(screen.queryByText(/Select Your Wallet/i)).not.toBeInTheDocument()
@@ -98,12 +116,15 @@ describe('App Component', () => {
 
   it('handles wallet connection attempt', async () => {
     const user = userEvent.setup()
-    freighterApi.getPublicKey.mockResolvedValue('GXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+    freighterApi.getPublicKey.mockResolvedValue('GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF')
     
     render(<App />)
     
     const connectButton = screen.getByRole('button', { name: /Connect Wallet/i })
-    await user.click(connectButton)
+    
+    await act(async () => {
+      await user.click(connectButton)
+    })
     
     await waitFor(() => {
       expect(screen.getByText(/Freighter/i)).toBeInTheDocument()

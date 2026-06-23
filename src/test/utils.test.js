@@ -45,7 +45,7 @@ describe('Utility Functions', () => {
 
   describe('validateStellarAddress', () => {
     it('validates correct Stellar address', () => {
-      const address = 'GXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+      const address = 'GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF'
       expect(validateStellarAddress(address)).toBe(true)
     })
 
