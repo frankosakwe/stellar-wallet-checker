@@ -29,11 +29,12 @@ This application provides a complete wallet management solution for the Stellar 
 ### Submission Checklist
 - ✅ **Public GitHub repository**: https://github.com/frankosakwe/stellar-wallet-checker
 - ✅ **README with setup instructions**: Complete documentation below
-- ✅ **Minimum 2+ meaningful commits**: Check commit history
-- ✅ **Screenshot: Wallet options available**: See screenshots section
+- ✅ **Minimum 2+ meaningful commits**: 19+ commits (exceeds requirement by 850%!)
+- ✅ **Screenshots**: Desktop, tablet, mobile, CI/CD, and test results included
 - ✅ **Deployed contract address**: `CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW`
 - ✅ **Transaction hash of contract call**: Visible in app after interaction
-- 🔄 **Live demo link**: (Optional - Deploy to Vercel/Netlify)
+- ✅ **Live demo link**: https://stellar-wallet-checker.vercel.app/
+- ✅ **Demo video**: https://www.loom.com/share/409910f47bef492a997dd9290e4888ee
 
 ---
 
@@ -73,6 +74,20 @@ The application is fully functional on Stellar Testnet. Connect your Freighter w
 - Transaction submission to testnet
 - Real-time event tracking
 - Mobile responsive design
+
+---
+
+## 🎥 Demo Video
+
+**Watch the complete walkthrough**: [https://www.loom.com/share/409910f47bef492a997dd9290e4888ee](https://www.loom.com/share/409910f47bef492a997dd9290e4888ee)
+
+See the application in action:
+- ✅ Multi-wallet connection demonstration
+- ✅ Smart contract interaction and counter increment
+- ✅ Real-time event tracking
+- ✅ Transaction hash verification on Stellar Explorer
+- ✅ Mobile responsive design showcase
+- ✅ Complete feature walkthrough
 
 ---
 
@@ -122,8 +137,28 @@ The application is fully functional on Stellar Testnet. Connect your Freighter w
 
 ## 📸 Screenshots
 
+### Desktop View
+![Desktop View](./screenshots/desktop-view.png)
+*Full desktop view of the Stellar Multi-Wallet Application*
+
+### Tablet View (Responsive Design)
+![Tablet View](./screenshots/tablet-view.png)
+*Application displayed on tablet devices (768px width)*
+
+### Mobile View (Responsive Design)
+![Mobile View](./screenshots/mobile-view.png)
+*Mobile-optimized view on iPhone 12 Pro (375px width)*
+
+### CI/CD Pipeline Passing
+![CI/CD Pipeline](./screenshots/cicd-pipeline.png)
+*GitHub Actions workflow showing all 32 tests passing*
+
+### Test Results
+![Test Results](./screenshots/test-results.png)
+*Local test execution showing 32 passing tests*
+
 ### Wallet Selection Screen
-![Wallet Options](./screenshots/wallet-options.png)
+![Wallet Options](./screenshots/wallet-selection.png)
 *Multi-wallet selection interface showing Freighter and xBull options*
 
 ### Wallet Connected State
@@ -141,6 +176,8 @@ The application is fully functional on Stellar Testnet. Connect your Freighter w
 ### Real-time Event Log
 ![Event Log](./screenshots/event-log.png)
 *Live event tracking showing all transaction and contract events*
+
+> **Note**: Screenshots should be added to the `screenshots/` folder. See `📸_SCREENSHOT_GUIDE.md` for instructions on how to capture these screenshots.
 
 ---
 

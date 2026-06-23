@@ -1,0 +1,32 @@
+📸 ADD YOUR SCREENSHOTS HERE
+
+Please add the following screenshot files to this folder:
+
+REQUIRED SCREENSHOTS (5):
+1. desktop-view.png - Desktop view of the live app
+2. tablet-view.png - Tablet responsive view (768px)
+3. mobile-view.png - Mobile responsive view (375px)
+4. cicd-pipeline.png - GitHub Actions showing all tests passing
+5. test-results.png - Terminal output showing 32 passed tests
+
+BONUS SCREENSHOTS (Optional but recommended):
+6. wallet-selection.png - Wallet selection screen
+7. wallet-connected.png - Connected wallet with balance
+8. contract-interaction.png - Smart contract interface
+9. transaction-success.png - Successful transaction
+10. event-log.png - Real-time event log
+
+HOW TO ADD SCREENSHOTS:
+1. Take screenshots following the guide in 📸_SCREENSHOT_GUIDE.md
+2. Save them to this folder with the exact names above
+3. Run: git add screenshots/
+4. Run: git commit -m "docs: Add project screenshots"
+5. Run: git push
+
+Once added, they will automatically appear in the README!
+
+Current Status:
+✅ Demo video added: https://www.loom.com/share/409910f47bef492a997dd9290e4888ee
+⚠️ Screenshots: Waiting to be added
+
+See 📸_SCREENSHOT_GUIDE.md in the root folder for detailed instructions.
