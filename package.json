@@ -1,21 +1,24 @@
 {
   "name": "stellar-wallet-checker",
-  "version": "1.0.0",
-  "description": "A Stellar testnet wallet manager with Freighter integration for checking balances and sending transactions",
+  "version": "2.0.0",
+  "description": "Multi-wallet Stellar testnet manager with smart contract integration and real-time events",
   "type": "module",
-  "author": "Your Name",
+  "author": "Frank Osakwe",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR-USERNAME/stellar-wallet-checker.git"
+    "url": "https://github.com/frankosakwe/stellar-wallet-checker.git"
   },
   "keywords": [
     "stellar",
     "blockchain",
     "wallet",
     "freighter",
+    "xbull",
     "testnet",
     "xlm",
+    "smart-contract",
+    "soroban",
     "cryptocurrency"
   ],
   "scripts": {
