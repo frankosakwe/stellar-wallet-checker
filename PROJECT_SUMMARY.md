@@ -271,17 +271,19 @@ Potential improvements:
 
 ---
 
-## ✅ Submission Requirements Met
+## 📋 Submission Requirements Met
 
-- [x] Public GitHub repository
-- [x] README.md with complete documentation
-- [x] Project description
-- [x] Setup instructions
-- [x] Screenshots (4 required)
-- [x] Wallet connected state
-- [x] Balance displayed
-- [x] Successful testnet transaction
-- [x] Transaction result shown to user
+Your submission must include:
+
+- [x] Public GitHub repository ✅
+- [x] README.md with complete documentation ✅
+- [x] Project description ✅
+- [x] Setup instructions ✅
+- [ ] 4 Screenshots (you need to add these):
+   1. Wallet connected state
+   2. Balance displayed
+   3. Successful testnet transaction
+   4. Transaction result shown to user
 
 ---
 

@@ -63,7 +63,7 @@ Before running this application, ensure you have:
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/YOUR-USERNAME/stellar-wallet-checker.git
+git clone https://github.com/frankosakwe/stellar-wallet-checker.git
 cd stellar-wallet-checker
 ```
 
