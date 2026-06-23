@@ -1,0 +1,38 @@
+{
+  "name": "stellar-wallet-checker",
+  "version": "1.0.0",
+  "description": "A Stellar testnet wallet manager with Freighter integration for checking balances and sending transactions",
+  "type": "module",
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR-USERNAME/stellar-wallet-checker.git"
+  },
+  "keywords": [
+    "stellar",
+    "blockchain",
+    "wallet",
+    "freighter",
+    "testnet",
+    "xlm",
+    "cryptocurrency"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "@stellar/freighter-api": "^2.0.0",
+    "stellar-sdk": "^11.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "vite": "^5.0.0"
+  }
+}
