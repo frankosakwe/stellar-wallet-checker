@@ -14,6 +14,16 @@ import { useState, useEffect } from 'react'
 import { isConnected, getPublicKey, signTransaction } from '@stellar/freighter-api'
 import * as StellarSdk from 'stellar-sdk'
 import { CONTRACT_ADDRESS, CONTRACT_FUNCTIONS, TX_CONFIG, SOROBAN_RPC_URL } from './contractConfig'
+import { 
+  initAnalytics, 
+  trackWalletConnection, 
+  trackTransaction, 
+  trackContractInteraction,
+  trackError,
+  getAnalyticsSummary
+} from './analytics'
+import FeedbackForm from './FeedbackForm'
+import AnalyticsDashboard from './AnalyticsDashboard'
 
 // Wallet types supported
 const WALLET_TYPES = {
@@ -45,14 +55,27 @@ function App() {
   const [contractError, setContractError] = useState('')
   const [eventLog, setEventLog] = useState([])
 
+  // Analytics & Feedback state
+  const [showFeedback, setShowFeedback] = useState(false)
+  const [showAnalytics, setShowAnalytics] = useState(false)
+  const [userCount, setUserCount] = useState(0)
+
   // Initialize Stellar SDK for Testnet
   const server = new StellarSdk.Horizon.Server('https://horizon-testnet.stellar.org')
   const networkPassphrase = StellarSdk.Networks.TESTNET
 
-  // Check wallet availability
+  // Check wallet availability and initialize analytics
   useEffect(() => {
     checkWalletAvailability()
+    initAnalytics()
+    updateUserCount()
   }, [])
+
+  // Update user count from analytics
+  const updateUserCount = () => {
+    const summary = getAnalyticsSummary()
+    setUserCount(summary.users.total)
+  }
 
   const checkWalletAvailability = async () => {
     try {
@@ -87,16 +110,23 @@ function App() {
         setWalletConnected(true)
         setShowWalletOptions(false)
         addEvent(`Connected to Freighter wallet: ${pubKey.substring(0, 8)}...`, 'success')
+        
+        // Track wallet connection in analytics
+        trackWalletConnection(pubKey, type)
+        updateUserCount()
+        
         await fetchBalance(pubKey)
         await fetchContractCount()
       } else if (type === WALLET_TYPES.XBULL) {
         // xBull wallet integration (simulation)
         setError('xBull wallet integration coming soon. Please use Freighter for now.')
         addEvent('xBull wallet not yet implemented', 'error')
+        trackError('xBull not implemented', 'wallet_connection')
       }
     } catch (err) {
       setError(`Failed to connect wallet: ${err.message}`)
       addEvent(`Wallet connection failed: ${err.message}`, 'error')
+      trackError(err.message, 'wallet_connection')
     } finally {
       setLoading(false)
     }
@@ -220,6 +250,9 @@ function App() {
       addEvent(`Transaction hash: ${result.hash.substring(0, 16)}...`, 'success')
       addEvent('Contract call successful - verified on Stellar Testnet', 'success')
 
+      // Track contract interaction in analytics
+      trackContractInteraction(publicKey, 'increment', result.hash, true)
+
       // Refresh balance after contract interaction
       setTimeout(() => {
         fetchBalance(publicKey)
@@ -229,6 +262,8 @@ function App() {
       setContractError(`Soroban contract call failed: ${err.message}`)
       addEvent(`Contract call failed: ${err.message}`, 'error')
       addEvent('Note: Contract requires Soroban-enabled wallet', 'info')
+      trackContractInteraction(publicKey, 'increment', null, false)
+      trackError(err.message, 'contract_call')
     } finally {
       setContractLoading(false)
     }
@@ -304,6 +339,9 @@ function App() {
       addEvent(`Payment sent: ${amount} XLM`, 'success')
       addEvent(`TX: ${result.hash.substring(0, 16)}...`, 'success')
 
+      // Track transaction in analytics
+      trackTransaction(publicKey, result.hash, 'payment', true)
+
       setTimeout(() => {
         fetchBalance(publicKey)
       }, 2000)
@@ -312,6 +350,8 @@ function App() {
       setTxStatus('error')
       setError(`Transaction failed: ${err.message}`)
       addEvent(`Payment failed: ${err.message}`, 'error')
+      trackTransaction(publicKey, null, 'payment', false)
+      trackError(err.message, 'transaction')
     } finally {
       setTxLoading(false)
     }
@@ -411,6 +451,24 @@ function App() {
         </div>
         <h3>Connected Account</h3>
         <div className="public-key">{publicKey}</div>
+        
+        {/* Analytics & Feedback Buttons */}
+        <div style={{display: 'flex', gap: '10px', marginTop: '15px', flexWrap: 'wrap'}}>
+          <button 
+            className="btn btn-secondary btn-small" 
+            onClick={() => setShowAnalytics(true)}
+            style={{fontSize: '0.9rem'}}
+          >
+            📊 Analytics ({userCount} users)
+          </button>
+          <button 
+            className="btn btn-secondary btn-small" 
+            onClick={() => setShowFeedback(true)}
+            style={{fontSize: '0.9rem'}}
+          >
+            📝 Give Feedback
+          </button>
+        </div>
       </div>
 
       {error && (
@@ -619,6 +677,22 @@ function App() {
           </a>
         </p>
       </div>
+
+      {/* Feedback Modal */}
+      {showFeedback && (
+        <FeedbackForm 
+          publicKey={publicKey} 
+          onClose={() => {
+            setShowFeedback(false)
+            updateUserCount()
+          }} 
+        />
+      )}
+
+      {/* Analytics Dashboard */}
+      {showAnalytics && (
+        <AnalyticsDashboard onClose={() => setShowAnalytics(false)} />
+      )}
     </div>
   )
 }
