@@ -20,8 +20,21 @@ CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW
 ```
 contracts/
 ├── Cargo.toml          # Rust dependencies and build configuration
+├── Makefile            # Build automation commands
 ├── src/
-│   └── lib.rs          # Main contract implementation
+│   ├── lib.rs          # Main contract implementation (180+ lines)
+│   └── test.rs         # Extended test suites (60+ lines)
+├── scripts/            # Deployment automation scripts
+│   ├── README.md       # Script documentation
+│   ├── build.sh        # Build contract (Linux/Mac)
+│   ├── test.sh         # Run tests (Linux/Mac)
+│   ├── optimize.sh     # Optimize WASM (Linux/Mac)
+│   ├── deploy.sh       # Deploy to testnet (Linux/Mac)
+│   ├── invoke.sh       # Invoke functions (Linux/Mac)
+│   ├── build.bat       # Build contract (Windows)
+│   ├── test.bat        # Run tests (Windows)
+│   └── deploy.bat      # Deploy to testnet (Windows)
+├── DEPLOYMENT.md       # Detailed deployment guide
 └── README.md           # This file
 ```
 
@@ -55,7 +68,35 @@ contracts/
 
 ## 🚀 Building the Contract
 
-### Prerequisites
+### Quick Start with Scripts
+
+**🎯 EASIEST METHOD - Use the automated scripts!**
+
+```bash
+# Linux/Mac/WSL
+cd contracts
+./scripts/build.sh       # Build contract
+./scripts/test.sh        # Run tests
+./scripts/optimize.sh    # Optimize WASM
+./scripts/deploy.sh      # Deploy to testnet
+./scripts/invoke.sh increment  # Test deployment
+
+# Windows
+cd contracts
+scripts\build.bat        # Build contract
+scripts\test.bat         # Run tests
+scripts\deploy.bat       # Deploy to testnet
+```
+
+**📖 For detailed script documentation, see: [scripts/README.md](./scripts/README.md)**
+
+---
+
+### Manual Build (Advanced)
+
+If you prefer manual building:
+
+#### Prerequisites
 
 1. **Install Rust:**
    ```bash
@@ -72,12 +113,18 @@ contracts/
    rustup target add wasm32-unknown-unknown
    ```
 
-### Build Commands
+#### Build Commands
 
 **Build the contract:**
 ```bash
 cd contracts
 cargo build --target wasm32-unknown-unknown --release
+```
+
+**Or use Makefile:**
+```bash
+cd contracts
+make build
 ```
 
 **Optimize the build:**
@@ -88,46 +135,94 @@ soroban contract optimize \
 
 The optimized WASM file will be in:
 ```
-target/wasm32-unknown-unknown/release/counter_contract.wasm
+target/wasm32-unknown-unknown/release/counter_contract.optimized.wasm
 ```
 
 ---
 
 ## 🧪 Testing
 
-### Run All Tests
+### Quick Start with Scripts
 
+**🎯 EASIEST METHOD - Use the test script!**
+
+```bash
+# Linux/Mac/WSL
+cd contracts
+./scripts/test.sh
+
+# Windows
+cd contracts
+scripts\test.bat
+```
+
+---
+
+### Manual Testing (Advanced)
+
+**Run All Tests:**
 ```bash
 cd contracts
 cargo test
 ```
 
-### Run Specific Test
+**Or use Makefile:**
+```bash
+make test
+```
 
+**Run Specific Test:**
 ```bash
 cargo test test_increment
 ```
 
-### Test with Output
-
+**Test with Output:**
 ```bash
 cargo test -- --nocapture
 ```
 
 ### Test Coverage
 
-The contract includes 5 comprehensive test suites:
+The contract includes 10+ comprehensive test suites:
 - ✅ `test_increment` - Basic increment functionality
 - ✅ `test_get_count` - Counter retrieval
 - ✅ `test_reset` - Reset functionality
 - ✅ `test_increment_by` - Custom increment amounts
 - ✅ `test_multiple_operations` - Complex workflows
+- ✅ Additional tests in `src/test.rs` (60+ lines)
 
 ---
 
 ## 📦 Deployment
 
-### Deploy to Testnet
+### Quick Start with Scripts
+
+**🎯 EASIEST METHOD - Use the deploy script!**
+
+The script handles everything automatically:
+- ✅ Network configuration
+- ✅ Identity generation
+- ✅ Account funding
+- ✅ Contract deployment
+- ✅ Contract ID saving
+
+```bash
+# Linux/Mac/WSL
+cd contracts
+./scripts/deploy.sh
+
+# Windows
+cd contracts
+scripts\deploy.bat
+```
+
+**📖 For detailed deployment documentation, see: [scripts/README.md](./scripts/README.md)**
+
+---
+
+### Manual Deployment (Advanced)
+
+If you prefer manual deployment:
 
 1. **Configure Soroban CLI for Testnet:**
    ```bash
@@ -145,6 +240,8 @@ The contract includes 5 comprehensive test suites:
    ```bash
    soroban keys fund deployer --network testnet
    ```
+   
+   Or manually at: https://laboratory.stellar.org/#account-creator?network=test
 
 4. **Deploy Contract:**
    ```bash
@@ -159,13 +256,48 @@ The contract includes 5 comprehensive test suites:
    ```
    CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW
    ```
+   
+6. **Update Frontend:**
+   Edit `src/contractConfig.js` and replace `CONTRACT_ADDRESS` with your new ID
 
 ---
 
 ## 🔌 Invoking Contract Functions
 
-### Increment Counter
+### Quick Start with Scripts
 
+**🎯 EASIEST METHOD - Use the invoke script!**
+
+```bash
+# Linux/Mac/WSL
+cd contracts
+
+# Increment counter by 1
+./scripts/invoke.sh increment
+
+# Get current count
+./scripts/invoke.sh get_count
+
+# Reset counter to 0
+./scripts/invoke.sh reset
+
+# Increment by custom amount
+./scripts/invoke.sh increment_by 10
+```
+
+The script automatically:
+- ✅ Uses saved contract ID from `.contract-id`
+- ✅ Falls back to default deployed contract
+- ✅ Formats output nicely
+- ✅ Shows results clearly
+
+**📖 For more examples, see: [scripts/README.md](./scripts/README.md)**
+
+---
+
+### Manual Invocation (Advanced)
+
+**Increment Counter:**
 ```bash
 soroban contract invoke \
   --id CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW \
@@ -174,8 +306,7 @@ soroban contract invoke \
   -- increment
 ```
 
-### Get Current Count
-
+**Get Current Count:**
 ```bash
 soroban contract invoke \
   --id CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW \
@@ -184,8 +315,7 @@ soroban contract invoke \
   -- get_count
 ```
 
-### Reset Counter
-
+**Reset Counter:**
 ```bash
 soroban contract invoke \
   --id CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW \
@@ -194,8 +324,7 @@ soroban contract invoke \
   -- reset
 ```
 
-### Increment by Custom Amount
-
+**Increment by Custom Amount:**
 ```bash
 soroban contract invoke \
   --id CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW \

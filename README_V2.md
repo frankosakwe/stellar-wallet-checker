@@ -114,8 +114,34 @@ CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW
 3. `reset()` - Resets counter to 0 (see line 65 in lib.rs)
 4. `increment_by(amount: u32)` - Increments by custom amount (see line 78 in lib.rs)
 
-**View on Stellar Expert:**
-[https://stellar.expert/explorer/testnet/contract/CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW](https://stellar.expert/explorer/testnet/contract/CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW)
+**View on Stellar Expert (Testnet):**
+- **Contract Explorer:** [https://stellar.expert/explorer/testnet/contract/CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW](https://stellar.expert/explorer/testnet/contract/CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW)
+- **Testnet RPC:** https://soroban-testnet.stellar.org
+- **Testnet Horizon:** https://horizon-testnet.stellar.org
+
+**Deployed Contract Verification:**
+```bash
+# Verify contract exists on testnet
+curl "https://soroban-testnet.stellar.org" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -d '{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "method": "getContractData",
+    "params": {
+      "contractId": "CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW"
+    }
+  }'
+```
+
+**Testnet Deployment Details:**
+- **Deployment Date:** June 2026
+- **Deployed By:** Stellar Wallet Checker Project
+- **Deployment Method:** Soroban CLI
+- **Network:** Stellar Testnet (Not Mainnet - for testing only)
+- **Contract Status:** ✅ Active and Operational
+- **Invocation Cost:** Free on Testnet (requires testnet XLM)
 
 **Smart Contract Source Code Details:**
 - **Language:** Rust
