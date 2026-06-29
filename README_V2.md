@@ -17,7 +17,7 @@
 - **Deployed Contract ID**: `CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW`
 - **Network**: Stellar Testnet (Soroban)
 
-## 📊 Project Overview
+## 📋 Project Overview
 
 This application provides a complete wallet management solution for the Stellar blockchain testnet with advanced features including:
 - **Soroban Smart Contract** (Counter contract with full source code in Rust)
@@ -26,6 +26,9 @@ This application provides a complete wallet management solution for the Stellar 
 - **Real-time event tracking** and transaction monitoring
 - **Contract interaction** from frontend using Stellar SDK
 - **Comprehensive error handling**
+- **📊 Production Analytics System** (User tracking, feedback collection, success metrics)
+- **📝 User Feedback Collection** (5-star rating system, detailed feedback forms)
+- **📈 Monitoring Dashboard** (Real-time analytics, data export, proof of usage)
 
 ---
 
@@ -63,8 +66,20 @@ This application provides a complete wallet management solution for the Stellar 
 | **Additional Tests** | `contracts/src/test.rs` | 60+ | Extended test suites |
 | **Build Config** | `contracts/Cargo.toml` | 30+ | Dependencies & configuration |
 | **Makefile** | `contracts/Makefile` | 80+ | Build automation |
+| **Deployment Scripts** | `contracts/scripts/` | 500+ | Bash & batch deployment scripts |
+| **Script Documentation** | `contracts/scripts/README.md` | 642 | Complete scripts guide |
 | **Documentation** | `contracts/README.md` | 400+ | Full contract docs |
 | **Deployment Guide** | `contracts/DEPLOYMENT.md` | 500+ | Deployment instructions |
+
+**Analytics & Monitoring System:**
+
+| File | Location | Lines | Description |
+|------|----------|-------|-------------|
+| **Analytics Module** | `src/analytics.js` | 450+ | User tracking & metrics |
+| **Feedback Form** | `src/FeedbackForm.jsx` | 300+ | User feedback collection |
+| **Analytics Dashboard** | `src/AnalyticsDashboard.jsx` | 400+ | Metrics visualization |
+| **Analytics Docs** | `ANALYTICS.md` | 600+ | Complete analytics guide |
+| **User Guide** | `USER_GUIDE.md` | 800+ | User onboarding guide |
 
 **Quick Verification Commands:**
 ```bash
@@ -73,6 +88,9 @@ ls contracts/
 
 # View main contract source
 cat contracts/src/lib.rs
+
+# View analytics module
+cat src/analytics.js
 
 # View Cargo.toml
 cat contracts/Cargo.toml
@@ -88,6 +106,7 @@ cd contracts && cargo test
 - Repository: https://github.com/frankosakwe/stellar-wallet-checker
 - Direct link to contract: https://github.com/frankosakwe/stellar-wallet-checker/tree/main/contracts
 - Direct link to lib.rs: https://github.com/frankosakwe/stellar-wallet-checker/blob/main/contracts/src/lib.rs
+- Direct link to analytics: https://github.com/frankosakwe/stellar-wallet-checker/blob/main/src/analytics.js
 
 ---
 
@@ -237,7 +256,16 @@ See the application in action:
 - Color-coded event types (success/error/info)
 - Auto-scrolling event list
 
-### 6. Error Handling
+### 6. Analytics & Monitoring 📊 NEW!
+- **User tracking system** - Track unique wallet connections
+- **Interaction analytics** - Monitor transactions and contract calls
+- **Success rate metrics** - Calculate transaction and contract success rates
+- **Feedback collection** - 5-star rating system with detailed feedback
+- **Analytics dashboard** - View users, metrics, and feedback in real-time
+- **Data export** - Export JSON/CSV for proof of user interactions
+- **User count display** - Show total registered users in UI
+
+### 7. Error Handling
 - Network connection errors
 - Wallet not installed detection
 - Insufficient balance warnings
@@ -352,7 +380,14 @@ npm run dev
 3. Approve connection in Freighter popup
 4. Your public key and balance will be displayed
 
-### 2. Interact with Smart Contract
+### 2. View Analytics 📊 NEW!
+
+1. Click **"📊 Analytics"** button to open dashboard
+2. View user statistics and interaction metrics
+3. Check success rates and feedback ratings
+4. Export data as JSON or CSV for proof of usage
+
+### 3. Interact with Smart Contract
 
 1. View the deployed contract address
 2. See current counter value
@@ -361,7 +396,7 @@ npm run dev
 5. Watch real-time event log for updates
 6. Transaction hash will be displayed with explorer link
 
-### 3. Send XLM Payments
+### 5. Send XLM Payments
 
 1. Scroll to **"Send XLM Transaction"** section
 2. Enter destination Stellar address
@@ -370,7 +405,7 @@ npm run dev
 5. Approve in Freighter
 6. View success message with transaction hash
 
-### 4. Monitor Events
+### 6. Monitor Events
 
 - Watch the **Real-time Event Log** at the bottom
 - All actions are logged with timestamps
