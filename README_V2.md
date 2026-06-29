@@ -49,12 +49,23 @@ CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW
 
 **Network:** Stellar Testnet
 
+**Source Code:** Available in `contracts/` folder
+
 **Functions:**
 - `increment()` - Increments counter by 1
 - `get_count()` - Returns current count
+- `reset()` - Resets counter to 0
+- `increment_by(amount)` - Increments by custom amount
 
 **View on Stellar Expert:**
 [https://stellar.expert/explorer/testnet/contract/CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW](https://stellar.expert/explorer/testnet/contract/CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW)
+
+**Smart Contract Details:**
+- Written in Rust using Soroban SDK
+- Includes 5 comprehensive test suites
+- Production-ready code with error handling
+- Optimized for gas efficiency
+- See `contracts/README.md` for build instructions
 
 **Example Transaction Hash:**
 *Will be generated when you interact with the contract*
@@ -273,18 +284,35 @@ npm run dev
 
 ```
 stellar-wallet-checker/
+├── contracts/                  # Smart contract source code
+│   ├── src/
+│   │   └── lib.rs              # Counter contract implementation
+│   ├── Cargo.toml              # Rust dependencies
+│   ├── Makefile                # Build automation
+│   ├── README.md               # Contract documentation
+│   ├── DEPLOYMENT.md           # Deployment guide
+│   └── rust-toolchain.toml     # Rust toolchain config
 ├── src/
 │   ├── App.jsx                 # Main application component
 │   ├── App_v1_backup.jsx       # Original version backup
 │   ├── main.jsx                # React entry point
 │   ├── index.css               # Application styles
-│   └── contractConfig.js       # Contract configuration
-├── screenshots/                # Application screenshots
+│   ├── contractConfig.js       # Contract configuration
+│   └── test/                   # Test suites
+│       ├── App.test.jsx        # App component tests
+│       ├── contractConfig.test.js  # Contract config tests
+│       ├── utils.test.js       # Utility function tests
+│       └── setup.js            # Test setup
+├── screenshots/                # Application screenshots (36 files)
+├── .github/
+│   └── workflows/
+│       └── ci.yml              # CI/CD pipeline
 ├── index.html                  # HTML template
 ├── package.json                # Dependencies
 ├── vite.config.js              # Build configuration
+├── vitest.config.js            # Test configuration
 ├── CONTRACT.md                 # Contract deployment guide
-├── README.md                   # This file
+├── README_V2.md                # This file (main documentation)
 └── .gitignore                  # Git ignore rules
 ```
 
