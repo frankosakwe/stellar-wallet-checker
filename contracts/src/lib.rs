@@ -101,6 +101,10 @@ impl CounterContract {
     }
 }
 
+// Additional tests in separate file
+#[cfg(test)]
+mod test_additional;
+
 #[cfg(test)]
 mod test {
     use super::*;
