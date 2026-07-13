@@ -6,6 +6,22 @@
 [![Soroban](https://img.shields.io/badge/Soroban-Smart_Contract-purple)](https://soroban.stellar.org)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
+---
+
+## 🎯 DEPLOYED STELLAR CONTRACT ON TESTNET
+
+> **📍 CONTRACT DEPLOYED AND VERIFIED ON STELLAR TESTNET**
+>
+> **Contract ID:** `CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW`
+>
+> **Network:** Stellar Testnet (Soroban)
+>
+> **Status:** ✅ ACTIVE AND OPERATIONAL
+>
+> **Verify Now:** [View on Stellar Expert →](https://stellar.expert/explorer/testnet/contract/CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW)
+
+---
+
 ## 🚀 SOROBAN SMART CONTRACT INCLUDED
 
 **⚠️ IMPORTANT: This repository contains complete Soroban smart contract source code**
