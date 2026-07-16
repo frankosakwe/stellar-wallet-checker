@@ -8,6 +8,43 @@
 
 ---
 
+# 🚀 DEPLOYED STELLAR CONTRACT ON TESTNET
+
+<table>
+<tr>
+<td>
+
+### 📍 CONTRACT SUCCESSFULLY DEPLOYED ON STELLAR TESTNET
+
+**🆔 Contract ID:**
+```
+CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW
+```
+
+**🌐 Network:** Stellar Testnet (Soroban)
+
+**✅ Status:** ACTIVE AND OPERATIONAL
+
+**🔍 Verify on Blockchain:**
+
+➡️ **[CLICK HERE - View Contract on Stellar Expert Testnet](https://stellar.expert/explorer/testnet/contract/CCWVVZGR3DDKH2J7QYLMGK2RWCKVZWPHGXV6Y3CXKXMQZKNF4LQHM5DW)**
+
+**📋 Quick Facts:**
+- ✅ Deployed: June 2026
+- ✅ Language: Rust (Soroban SDK)
+- ✅ Type: Counter Contract
+- ✅ Functions: 4 (increment, get_count, reset, increment_by)
+- ✅ Tests: 32 passing
+- ✅ Source Code: [`contracts/src/lib.rs`](./contracts/src/lib.rs)
+
+**🎯 Live Demo:** [https://stellar-wallet-checker.vercel.app/](https://stellar-wallet-checker.vercel.app/)
+
+</td>
+</tr>
+</table>
+
+---
+
 ## 🎯 DEPLOYED STELLAR CONTRACT ON TESTNET
 
 > **📍 CONTRACT DEPLOYED AND VERIFIED ON STELLAR TESTNET**
